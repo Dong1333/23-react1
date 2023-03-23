@@ -27,13 +27,12 @@ npx create-react-app 23-react1(프로젝트 명)
 const element = <h1>Hello, world!</h1>;
 ```
 
-#### 장점
+#### JSX의 장점
 * 코드가 간결해지므로 가독성이 향상된다.
 
 * Injection Attack이라 불리는 해킹 방법을 방어하므로 보에 강하다.
 * 모든 자바스크립트 문법을 지원한다.
 * 자바 스크립트 문법에 XML과 HTML을 섞어서 사용한다. (XML은 HTML을 확장한 것.) 쉽게 말 해 내가 <태그> 를 정의해서 사용할 수 있다.
-* 
 
 ### 📦JSX에 표현식 포함하기
 아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용한다.
@@ -58,6 +57,28 @@ const element = React.createElement(
   {className: 'greeting'},
   'Hello, world!'
 );
+```
+--
+
+### 👨🏻‍💻 JSX 실습
+JS로 파일로 생성하기 보다는 JSX 명칭 그대로 지정해준다.
+```jsx
+import React from "react"
+
+
+// 컴포넌트를 작성하는 곳(파일 명과 일치하게 입력).
+function Book(props){
+    return (
+        <div>
+            <h1>{`이 책의 이름은 ${props.name}입니다.`}</h1>
+            <h2>{`이 책은 총 ${props.name}페이지로 이루어져 있습니다.`}</h2>
+        </div>
+    )
+}
+
+
+// 외부에서 사용할 수 있게 설정하는 코드
+export default Book
 ```
 ---
 ## 03.16(3주차)
