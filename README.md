@@ -1,6 +1,6 @@
 # 23-React1 서동근 
 ## 03.23(4주차)
-### 🔨 React 프로젝트 재생성
+#### 🔨 React 프로젝트 재생성
 (프로젝트 명이 겹치는 상황이 발생하여 react 프로젝트를 다시 만들어봤다.) <br> <br>
 1. 프로젝트 삭제 (이때 .git 파일은 꼭 삭제해 준다)
 2. visual stuido code -> open folder
@@ -10,11 +10,11 @@ npx create-react-app 23-react1(프로젝트 명)
 ```
 4. 이후 visual studio code -> source Control -> git repository 만들기(public 추천)
 
-(여기까지 완성되었다 이후 commit 도 진행해본다)<br>
+    (여기까지 프로젝트 생성 완료 이후 commit 도 진행해본다)<br>
 
 5. README.MD 수정 -> commit -> push
-
---- 👯‍♂️ GIT CLONE
+---
+### 👯‍♂️ GIT CLONE
 1. 깃 허브 -> 복사 당할 레파지토리 -> [code] -> 주소 확인 후 복사(https)
 2. visual studio code -> 복사 받을 폴더 생성 후 열기 -> 터미널 접속
 3. git clone [1번에서 복사한 레파지토리 주소]
@@ -22,12 +22,20 @@ npx create-react-app 23-react1(프로젝트 명)
 ---
 ### 🧐 JSX란?
 아래의 희한한 태그 문법은 문자열도, HTML도 아니다.<br>
-이를 <i>JSX라 하며 JavaScript를 확장한 문법입니다<i/>
+이를 <i>JSX라 하며 JavaScript를 확장한 문법입니다</i>
 ```JS
 const element = <h1>Hello, world!</h1>;
 ```
 
+### 📦JSX에 표현식 포함하기
+아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하다.
+```JS
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+```
 
+### 🐧 JSX는 객체를 표현합니다.
+Babel은 JSX를 React.createElement() 호출로 컴파일합니다.
 
 ---
 ## 03.16(3주차)
