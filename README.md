@@ -27,16 +27,38 @@ npx create-react-app 23-react1(프로젝트 명)
 const element = <h1>Hello, world!</h1>;
 ```
 
+#### 장점
+* 코드가 간결해지므로 가독성이 향상된다.
+
+* Injection Attack이라 불리는 해킹 방법을 방어하므로 보에 강하다.
+* 모든 자바스크립트 문법을 지원한다.
+* 자바 스크립트 문법에 XML과 HTML을 섞어서 사용한다. (XML은 HTML을 확장한 것.) 쉽게 말 해 내가 <태그> 를 정의해서 사용할 수 있다.
+* 
+
 ### 📦JSX에 표현식 포함하기
-아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하다.
+아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용한다.
 ```JS
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
 ```
 
 ### 🐧 JSX는 객체를 표현합니다.
-Babel은 JSX를 React.createElement() 호출로 컴파일합니다.
+Babel은 JSX를 React.createElement() 호출로 컴파일한다.
+<br> 아래는 Babel은(바벨)의 역할의 예제이다.
+다음 두 예시는 동일하다.
+```JS
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
 
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
 ---
 ## 03.16(3주차)
 ### 🧐 리엑트란?
