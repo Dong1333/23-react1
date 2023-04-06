@@ -55,6 +55,7 @@ function CommentList(props) {
 
 <img src="../23-react1/image/state1.png" width="450px" height="300px" title="30%" alt="스테이트 설명"></img><br/>
 
+<img src="../23-react1/image/bread-example.png" width="450px" height="300px" title="30%" alt="(엘리먼트, 컴포넌트, 인스턴스)그림 설명"></img><br/>
 
 ---
 ## 03.30(5주차)
