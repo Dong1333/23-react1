@@ -53,7 +53,7 @@ function CommentList(props) {
 ### state의 특징
 * 리엑트 만의 특별한 형태가 아닌 단지 자바스크립트 객체일 뿐이다.
 
-<img src="/path/to/img.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+<img src="../23-react1/image/state1.png" width="450px" height="300px" title="30%" alt="스테이트 설명"></img><br/>
 
 
 ---
