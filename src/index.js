@@ -12,11 +12,14 @@ import CommentList from './chapter_05/CommentList';
 import Notification from './chapter_06/Notification';
 import Accommodate from './chapter_07/Accommodate';
 import useCounter from './chapter_07/useCounter';
+import ConfirmButton from './chapter_08/ConfirmButton';
+import LandingPage from './chapter_09/LandingPage';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Accommodate />
+    <LandingPage />
   </React.StrictMode>
   
 );
