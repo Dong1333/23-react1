@@ -1,5 +1,55 @@
 # 23-React1 서동근 
 
+## 04.27(9주차)
+### 🏎️ 이벤트 핸들링 (처리)
+Dom 클릭 이벤트 처리, React 클릭 이벤트 처리 차이점
+
+```JS
+// Dom 클릭 이벤트(HTML)
+<button onclick="activateLasers()">
+  Activate Lasers
+</button>
+
+// React 클릭 이벤트
+<button onClick={activateLasers}>
+  Activate Lasers
+</button>
+```
+
+* 이벤트의 이름이 onclick에서 onClick으로 변경
+* 젼댤하려는 함수는 문자열에서 함수 그대로 전달 
+<br>
+
+### 이벤트 헨들러 추가 방법
+* 버튼 클릭 시 이벤트 헨들러 함수인 handleClick()호출
+* bind 미사용시 this.handleClick은 클로벌 스코프에서 호출되어, undefined로  사용불가 하기 떄문
+* bind 미사용 시 화살표 함수를 사용하여도 된다.(거의 사용하지는 않음)
+
+```JS
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // 콜백에서 `this`가 작동하려면 아래와 같이 바인딩 해주어야 한다.
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+```
 
 ## 04.13(7주차)
 ### 👀 훅이란
@@ -248,7 +298,6 @@ const element = React.createElement(
   'Hello, world!'
 );
 ```
---
 
 ### 👨🏻‍💻 JSX 실습
 JS로 파일로 생성하기 보다는 JSX 명칭 그대로 지정해준다.
