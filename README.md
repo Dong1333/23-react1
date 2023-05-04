@@ -118,6 +118,16 @@ ReactDOM.render(
 * 제어 컴포넌트에 value prop을 정해진 값으로 넣으면 코드를 수정하지 않는 한 입력값을 바꿀 수 없다.
 * 만역 value prop은 넣되 자유롭게 입력할 수 있게 만들고 싶다면 같이 undefind 또는 null을 넣어주면 된다.
 
+
+### 📶 Shared state
+* 하위 컴포넌트가 공통된 부모 컴포넌트의 state를 공유하여 사용하는 것을 shard state라고 한다.
+
+#### 👨🏻‍🏫 예시
+* 컴포넌트 A(state = degree 25), 컴포넌트 A를 상속받은 C, F 컴포넌트가 있다면 각각 degree 값을 가지고 있을 필요 없이 state에 있는 state에 접근하여 사용할 수 있다.
+
+
+
+
 <br>
 
 ***
