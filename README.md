@@ -114,6 +114,10 @@ ReactDOM.render(
 ### 🎛️ 제어 컴포넌트
 * 제어 컴포넌트는 사용자가 입력한 값에 접근하고 제어할 수 있도록 해주는 컴포넌트이다.
 
+### ␀ Input Null Value
+* 제어 컴포넌트에 value prop을 정해진 값으로 넣으면 코드를 수정하지 않는 한 입력값을 바꿀 수 없다.
+* 만역 value prop은 넣되 자유롭게 입력할 수 있게 만들고 싶다면 같이 undefind 또는 null을 넣어주면 된다.
+
 <br>
 
 ***
@@ -169,6 +173,8 @@ class Toggle extends React.Component {
   }
 }
 ```
+
+<br>
 
 * 클래스형을 함수형으로 바꾸려면<br>
 
