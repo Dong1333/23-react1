@@ -75,7 +75,7 @@ ReactDOM.render(
   const numbers = [1, 2, 3, 4, 5];
   ReactDOM.render(
     <NumberList numbers={numbers} />,
-    documents.getElementById('root/)
+    documents.getElementById('root')
   );
 ```
 
@@ -91,6 +91,28 @@ ReactDOM.render(
 * 키는 같은 리스트에 있는 엘리먼트 사이에서만 고유한 값이면 된다.
 * 예시로 A 대학교, B 대학교에 등록된 학번은 같아도 상관없다.(같은 리스트가 아님)
 
+### 💬 폼이란?
+* 일반적으로 사용자로부터 입력을 받기위한 양식을 일컫는다
+```JS
+// 폼 예제 코드
+<form>
+    이름: <input type = "text" name="name"/>
+
+
+    <button type="submit">제출</button>
+</form>
+```
+
+### 👩🏻‍💻 코드 결과
+<pre>
+  이름: <input type = "text" name="name"/>
+          
+            <button type="submit">제출</button>
+
+</pre>
+
+### 🎛️ 제어 컴포넌트
+* 제어 컴포넌트는 사용자가 입력한 값에 접근하고 제어할 수 있도록 해주는 컴포넌트이다.
 
 <br>
 
