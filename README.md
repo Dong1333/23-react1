@@ -1,5 +1,96 @@
 # 23-React1 서동근 
 
+
+## 05.18(12주차)
+## 🤝 합성에 대해 알아보기
+* 합성(Composition)은 '여러 개의 컴포넌트를 합쳐서 새로운 컴포넌트를 만드는 것'이다.
+* 조합 방법에 따라 합성의 사용 기법은 다음과 같이 나눌 수 있다.
+
+### 🧺 [1] Containment(담다, 포함하다, 격리하다)
+* 특정 컴포넌트가 하위 컴포넌트를 포함하는 형태의 합성 방법이다.
+* 컴포넌트에 따라서는 어떤 자식 엘리먼트가 들어올 지 미리 예상할 수 없는 경우가 있다.
+* 범용적인 '박스' 역할을 하는 Sidebar 혹은 Dialog과 같은 컴포넌트에서 특히 자주 볼 수 있다.
+* 이런 컴포넌트에서는 children prop을 사용하여 자식 엘리먼트를 출력에 그대로 전달하는 것이 좋다.
+* 이때 children prop은 컴포넌트의 props에 기본적으로 들어있는 children속성을 사용한다.
+
+* 아래와 같이 props.children을 사용하면 해당 컴포넌트의 하위 컴포넌트가 모두 children으로 들어오게 됩니다.
+```JS
+function FancyBorder(props){
+  return (
+    <div className = {'FancyBorder FancyBorder-' + props.color}>
+        {props.children}
+    </div>
+  );
+}
+```
+
+
+* children은 다음 구조에서 세 번째 들어가는 파라미터 이다.
+* 파라미터가 배열로 되어있는 이유는 여러 개의 하위 컴포넌트를 가질 수 있기 떄문이다.
+* children이 배열로 되어있는 것은 여러 개의 하위 컴포넌트를 위한 것이다.
+```JS
+React.createElement(
+  type,
+  [props],
+  [...children]
+)
+```
+
+* 교재 150page에서 설명한 것과 같이 jsx를 사용하지 않는 경우의 props전달 방법이다.
+* 정확히 말하면 JSX를 사용하지 않고 리액트로 엘리먼트를 생성하는 방법이다.
+
+
+```JS
+/// JSX를 이용한 간단한 방법
+const jsxElement = <h1 className="jsx"> JSX Element </h1>
+
+/// 리액트 이용한 간단한 방법
+const reactElement = React.createElement(
+  'h1', // tag
+  {className : 'obj'}, // props
+  'OBJ Element' // [...children]
+)
+``` 
+<br>
+
+--- 
+<br>
+
+## 💻 FacncyBorder컴포넌트 사용 예제
+* WelconDialog 컴포넌트는 FancyBorder 컴포넌트를 사용하고, FancyBorder 컴포넌트는 <'h1'>과 <'p'>두개의 태그를 children이 props로 전달된다.
+```JS
+
+function WelcomeDialog(props){
+  return (
+    <FancyBorder color="blue">
+      <h1 className = "Dialog-title">
+          어서오세요
+      </h1>
+      <p className="Dialog-message">
+          우리 사이트에 방문하신 것을 환영합니다!
+      </p>
+    </FancyBorder>
+  );
+}
+```
+* 리액트에서는 props.children을 통해 하위 컴포넌트를 하나로 모아서 제공해 준다.
+* 만일 여러개의 children 집합이 필요할 경우에 별도로 props를 정의해서 각각 원하는 컴포넌트를 넣어준다
+* 예와 같이 SplitPane은 화면을 왼쪽과 오른쪽으로 분할해 주고, App에서는 SplitPane을 사용해서 left, right 두 개의 porps를 정의하고 있다.
+* 즉, App에서 left, right를 props를 받아서 화면을 분할하게 된다 이처럼 여러개의 children 집합이 필요한 경우 별도의 props를 정의해서 사용한다.
+
+<br>
+
+--- 
+<br>
+
+### [2] Specialization (특수화, 전문화)
+* 범용적인 개념을 구별이 되게 구체화 하는 것을 특수화락 ㅗ한다
+* 객체지향 언어에서는 '상속'을 사용하여 특수화를 구현합니다.
+* 리액트에서는 합성을 사용하여 특수화를 구현합니다.
+* 특수화는 범용적으로 쓸 수 있는 컴포넌트를 만들어 놓고 이를 특수한 목적을 사용하는 합성 방식이다.
+
+
+
 ## 05.11(11주차)
 ### 섭씨 화씨 실습(코드 확인)
 
