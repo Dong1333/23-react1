@@ -83,12 +83,41 @@ function WelcomeDialog(props){
 --- 
 <br>
 
-### [2] Specialization (특수화, 전문화)
+### 🐠 [2] Specialization (특수화, 전문화)
 * 범용적인 개념을 구별이 되게 구체화 하는 것을 특수화락 ㅗ한다
 * 객체지향 언어에서는 '상속'을 사용하여 특수화를 구현합니다.
 * 리액트에서는 합성을 사용하여 특수화를 구현합니다.
 * 특수화는 범용적으로 쓸 수 있는 컴포넌트를 만들어 놓고 이를 특수한 목적을 사용하는 합성 방식이다.
 
+
+<br>
+
+--- 
+<br>
+
+### 🦮 [3] Contaionment와 Specialization을 같이 사용하기.
+* Containment를 위해서 props.children을 사용하고, Specialization을 위해 직접 정의한 props를 사용하면 된다.
+* Dialog를 사용하는 SignUpDialog는 Specialization을 위해 props인 title, message에 값을 넣어주고 있고, 입력을 받기위해 <'input'>과 <'button'>을 사용합니다.
+* 이 두개의 태그는 모두 props,children으로 전달되어 다이어로그에 표시됩니다.
+* 이러한 형태로 Containment와 Specialization을 동시에 사용할 수 있습니다.
+
+
+<br>
+
+--- 
+<br>
+
+## 👩‍👦 상속에 대해 알아보기
+### 👀 상속이란
+* 합성과 대비되는 개념이다.
+* 자식 클래스는 부모 클래스가 가진 변수나 함수 등의 속성을 모두 갖게 되는 개념이다.
+* 하지만 리액트에서는 상속보다는 합성을 통해 새로운 컴포넌트를 생성한다.
+* 💡 복잡한 컴포넌트를 나누어 여러 개의 컴포넌트로 만들고, 만든 컴포넌트들을 조합하여 새로운 커포넌트를 만들어 보자
+
+<br>
+
+--- 
+<br>
 
 
 ## 05.11(11주차)
