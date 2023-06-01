@@ -1,5 +1,102 @@
 # 23-React1 서동근 
 
+
+## 06.01(14주차)
+## 📺 styled-components 설치하기
+
+styled-com ponents를 사용하기 위해서 프로젝트에 설치를 해줘야 한다.
+아래 명령어를 통 해서 최신 버전의 styled-components를 설치할 수 있다.
+###  npm을 사용하는 경우
+```
+npm install -save styled-components
+```
+### yam을 사용하는 경우
+```
+yarn add styled-components
+```
+
+설치가 끝났다면 리액트 프로젝트에서 아래처럼 MainPage라는 이름의 간단한 컴포넌트를 하 나 만들어 실제로 styled-com ponents가 잘 돌아가는지 확인할 수 있다.
+
+--- 
+
+``` js
+
+import React from "react";
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  padding: lem; 
+  background: grey;
+`;
+
+const Title = styled.hl' 
+  font-size: 1.5em; 
+  color: white; text-align: center; 
+';
+
+function MainPage(props) { 
+  return (
+    <Wrapper>
+      <Title>
+      안녕, 리액트!
+      </Title>
+    </Wrapper> 
+  )
+)
+export default MainPage;
+```
+스타일이 잘 적용되었다면 회색 배경에 흰색 글씨로 '안녕, 리액트!’라는 문자열이 출력되는 것 을볼수 있다.
+
+
+<br>
+
+### 🙋🏻‍♂️ styled-components 기본 사용법
+* styled-components는 태그드 템플릿 리터럴sggedtemplateliteraL을사용하여 구성 요소의 스타일 을 지정한다.
+*  여기에서 템플릿 리터럴templateliteral이라는 것이 등장하는데 이것은 자바스크립 트에서 제공하는 문법 중 하나다.
+* 템플릿 리터럴에 대해 설명하기 전에 먼저 리터럴順山에 대해 알아야 한다.  
+* 프로그래밍에서 리터럴은 돈 :을 의미합니다. 흔히 상수 constam와 헷갈려 하는 경우가 있는데 둘은 다른 개념이다
+
+### 🧑🏻‍💻 styled-components2l props 사용하기
+* styled-com ponents에서는 조건이나 동적으로 변하는 값을 사용해서 스타일링할 수는 없을 까? 물론 가능하다.
+*  이것을 위해 제공하는 기능이 바로 props이다.
+
+리액트 컴포넌트의 props와 같은 개념으로 이해하면 되는데 예제 코드를 참고하자
+
+``` JS
+import React from "react";
+import styled from "ustyled-components";
+
+const Button = styled.button'
+    color: ${props => props.dark ? "white" : "dark" };
+    background: ${props => props.dark ? "black" : "white"}; border: 1px solid black;
+';
+function Sample(props) { 
+    return (  
+    <div>
+        <Button>Normal</Button>
+        <Button dark>Dark</Button>
+    </div>
+    ) 
+}
+export default Sample;
+```
+
+* 위의 코드에는 Button이라는 컴포넌트가 등장한다. 
+* 이 컴포넌트는 styled-components를 사용해서 만들어진 것이다.
+*  그리고 styled-components를 사용하는 부분의 CSS 속성을 보 면 내부에 props가 사용된 것을 볼 수 있다. 여기에서의 props는 해당 컴포넌트에 사용된 props를 의미한다.
+*  따라서 실제 Button 컴포넌트를 사용하는 부분의 코드를 보면 <'Button dark'> Dark<'/Button'>처럼 props로 dark를 넣어 주는 것을 볼 수 있다.
+*  그리고 이렇게 들어간 props는 그대로 styled-components로 전달된다.
+*  이 기능을 사용하면 styled- components를 사용하여 다양한 스타일을 자유자재로 구현할 수 있다.
+
+<br>
+
+### 🤷🏻 styled-components2l 스타일 확장하기
+* 위에서 styled-components를 사용하면 리액트 컴포넌트가 생성된다고 설명했다.
+*  그렇다면 이렇게 생성된 컴포넌트를 기반으로 추가적인 스타일을 적용하고 싶을 경우에는 어떻게 해야할까?
+* styled-components에서는 이를 위한 스타일 확장 기능을 제공한다.
+
+
+
 ## 05.25(13주차)
 ### 🚀 여러 개의 컨텍스트 사용하기
 * 여러 개의 컨텍스트를 동시에 사용하면 Context.Provider를 중첩해서 사용한다.
